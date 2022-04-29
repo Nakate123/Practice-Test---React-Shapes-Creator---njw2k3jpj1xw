@@ -1,18 +1,21 @@
-import React from 'react'
-import '../styles/App.css';
-const App = () => {
+import { Routes, Route, Link } from "react-router-dom";
 
+import Home from "./components/Home/Home";
+// import About from './components/About/About';
+// import Team from './components/Team/Team';
+// import Vision from './components/Vision/Vision';
+import CreateShapes from "./components/CreateShapes/CreateShapes";
+
+function App() {
   return (
-    <div id="main">
-      <div id="shape-creator">
-        
-
-      </div>
-      <div id="shapes-holder">
-      </div>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home/:tabType" element={<Home />} />
+        <Route path="/createshapes" element={<CreateShapes />} />
+      </Routes>
     </div>
-  )
+  );
 }
-
 
 export default App;
